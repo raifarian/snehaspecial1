@@ -1,0 +1,2342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sneha ♡ My Baby</title>
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================================
+   BASIC
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#faf7f3;
+    color:#332c2b;
+    font-family:"DM Sans", sans-serif;
+    overflow-x:hidden;
+}
+
+button,
+a{
+    font-family:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+
+/* =========================================================
+   COLORS
+========================================================= */
+
+:root{
+
+    --cream:#faf7f3;
+    --cream2:#f4eee8;
+
+    --pink:#e9b9bd;
+    --pink-dark:#c9828a;
+
+    --gold:#c7a45d;
+    --gold-light:#e3c98b;
+
+    --brown:#332c2b;
+    --muted:#827975;
+
+    --white:#ffffff;
+
+    --shadow:
+        0 25px 70px rgba(78,53,47,.12);
+}
+
+
+/* =========================================================
+   FLOATING HEARTS
+========================================================= */
+
+#hearts{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    overflow:hidden;
+    z-index:0;
+}
+
+.heart{
+    position:absolute;
+    bottom:-30px;
+    color:#dcaeb2;
+    opacity:.25;
+    animation:heartFloat linear infinite;
+}
+
+@keyframes heartFloat{
+
+    0%{
+        transform:translateY(0) rotate(0deg);
+        opacity:0;
+    }
+
+    15%{
+        opacity:.3;
+    }
+
+    100%{
+        transform:
+            translateY(-110vh)
+            rotate(35deg);
+        opacity:0;
+    }
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar{
+
+    position:fixed;
+
+    top:18px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:
+        min(92%,1100px);
+
+    padding:13px 18px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    background:
+        rgba(255,255,255,.75);
+
+    backdrop-filter:blur(20px);
+
+    border:
+        1px solid
+        rgba(199,164,93,.2);
+
+    border-radius:50px;
+
+    box-shadow:
+        0 12px 40px
+        rgba(60,40,35,.08);
+
+    z-index:100;
+}
+
+.logo{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:24px;
+
+    color:#6c4748;
+
+    font-weight:500;
+}
+
+.logo span{
+
+    color:var(--pink-dark);
+
+}
+
+.nav-links{
+
+    display:flex;
+
+    gap:25px;
+
+}
+
+.nav-links a{
+
+    font-size:12px;
+
+    color:#756967;
+
+    padding:9px 13px;
+
+    border-radius:30px;
+
+    transition:.3s;
+
+}
+
+.nav-links a:hover{
+
+    background:#f7e4e3;
+
+    color:#8b5559;
+
+}
+
+.menu{
+
+    display:none;
+
+    border:0;
+
+    background:none;
+
+    font-size:24px;
+
+    color:#70494b;
+
+}
+
+
+/* =========================================================
+   PAGE SYSTEM
+========================================================= */
+
+.page{
+
+    min-height:100vh;
+
+    padding:
+        120px 7vw
+        80px;
+
+    display:none;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.page.active{
+
+    display:block;
+
+    animation:
+        pageAnimation .7s ease;
+
+}
+
+@keyframes pageAnimation{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   HOME
+========================================================= */
+
+.home{
+
+    min-height:
+        100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.home::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:600px;
+    height:600px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(233,185,189,.35),
+            transparent 65%
+        );
+
+    border-radius:50%;
+
+    filter:blur(10px);
+
+}
+
+.home-content{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:900px;
+
+}
+
+.small-title{
+
+    font-size:11px;
+
+    letter-spacing:.35em;
+
+    text-transform:uppercase;
+
+    color:#a88c88;
+
+    margin-bottom:25px;
+
+}
+
+.home-title{
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size:
+        clamp(75px,15vw,180px);
+
+    line-height:.85;
+
+    font-weight:400;
+
+    color:#594344;
+
+}
+
+.home-title span{
+
+    display:block;
+
+    color:#bd777d;
+
+    font-style:italic;
+
+}
+
+.home-subtitle{
+
+    margin-top:35px;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size:
+        clamp(21px,3vw,30px);
+
+    color:#806d69;
+
+}
+
+.home-subtitle strong{
+
+    color:#bd777d;
+
+}
+
+.buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:13px;
+
+    margin-top:40px;
+
+    flex-wrap:wrap;
+
+}
+
+.btn{
+
+    border:0;
+
+    padding:
+        14px 25px;
+
+    border-radius:50px;
+
+    font-size:11px;
+
+    letter-spacing:.1em;
+
+    text-transform:uppercase;
+
+    transition:.3s;
+
+}
+
+.btn-primary{
+
+    background:#c9828a;
+
+    color:white;
+
+    box-shadow:
+        0 10px 25px
+        rgba(201,130,138,.25);
+
+}
+
+.btn-primary:hover{
+
+    transform:translateY(-3px);
+
+    background:#b96e76;
+
+}
+
+.btn-secondary{
+
+    background:white;
+
+    color:#765d5b;
+
+    border:
+        1px solid
+        rgba(199,164,93,.35);
+
+}
+
+.btn-secondary:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:var(--shadow);
+
+}
+
+.scroll-text{
+
+    position:absolute;
+
+    bottom:25px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    font-size:9px;
+
+    letter-spacing:.3em;
+
+    color:#aaa09b;
+
+}
+
+
+/* =========================================================
+   COMMON SECTION TITLE
+========================================================= */
+
+.section-header{
+
+    max-width:900px;
+
+    margin:
+        0 auto 60px;
+
+    text-align:center;
+
+}
+
+.section-label{
+
+    font-size:10px;
+
+    letter-spacing:.3em;
+
+    text-transform:uppercase;
+
+    color:#c19a62;
+
+    margin-bottom:15px;
+
+}
+
+.section-title{
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size:
+        clamp(48px,7vw,85px);
+
+    font-weight:400;
+
+    line-height:.95;
+
+    color:#594344;
+
+}
+
+.section-title em{
+
+    color:#c9828a;
+
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-grid{
+
+    max-width:1100px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:70px;
+
+    align-items:center;
+
+}
+
+.main-photo{
+
+    position:relative;
+
+}
+
+.main-photo img{
+
+    width:100%;
+
+    aspect-ratio:
+        4/5;
+
+    object-fit:cover;
+
+    border-radius:
+        170px 170px 20px 20px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.photo-decoration{
+
+    position:absolute;
+
+    width:100px;
+
+    height:100px;
+
+    border:
+        1px solid
+        var(--gold);
+
+    border-radius:50%;
+
+    right:-25px;
+
+    bottom:-25px;
+
+    z-index:-1;
+
+}
+
+.about-text{
+
+    color:#776a67;
+
+    font-size:15px;
+
+    line-height:1.9;
+
+}
+
+.about-text .quote{
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size:
+        clamp(30px,4vw,48px);
+
+    line-height:1.15;
+
+    color:#594344;
+
+    margin-bottom:30px;
+
+}
+
+.about-text .quote span{
+
+    color:#c9828a;
+
+}
+
+.gold-line{
+
+    width:55px;
+
+    height:2px;
+
+    background:
+        linear-gradient(
+            to right,
+            var(--gold),
+            var(--gold-light)
+        );
+
+    margin:
+        25px 0;
+
+}
+
+
+/* =========================================================
+   GALLERY
+========================================================= */
+
+.gallery{
+
+    max-width:1100px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:25px;
+
+}
+
+.gallery-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:20px;
+
+    background:white;
+
+    box-shadow:
+        0 15px 45px
+        rgba(70,45,40,.1);
+
+    cursor:pointer;
+
+}
+
+.gallery-card:first-child{
+
+    grid-row:
+        span 2;
+
+}
+
+.gallery-card img{
+
+    width:100%;
+
+    height:100%;
+
+    min-height:300px;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:
+        transform .8s ease;
+
+}
+
+.gallery-card:hover img{
+
+    transform:scale(1.06);
+
+}
+
+.gallery-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    align-items:flex-end;
+
+    padding:25px;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(40,25,24,.5),
+            transparent 60%
+        );
+
+}
+
+.gallery-caption{
+
+    color:white;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size:25px;
+
+    font-style:italic;
+
+}
+
+
+/* =========================================================
+   LIGHTBOX
+========================================================= */
+
+.lightbox{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+        rgba(40,28,27,.88);
+
+    backdrop-filter:blur(12px);
+
+    z-index:500;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.4s;
+
+}
+
+.lightbox.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+.lightbox img{
+
+    max-width:
+        90%;
+
+    max-height:
+        85vh;
+
+    border-radius:20px;
+
+    box-shadow:
+        0 30px 100px
+        rgba(0,0,0,.4);
+
+}
+
+.close{
+
+    position:absolute;
+
+    top:25px;
+
+    right:30px;
+
+    border:0;
+
+    background:white;
+
+    color:#644849;
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:50%;
+
+    font-size:25px;
+
+}
+
+
+/* =========================================================
+   LETTER
+========================================================= */
+
+.letter-container{
+
+    max-width:800px;
+
+    margin:auto;
+
+}
+
+.letter{
+
+    position:relative;
+
+    background:#fffdfb;
+
+    padding:
+        clamp(35px,7vw,80px);
+
+    border-radius:20px;
+
+    box-shadow:var(--shadow);
+
+    border:
+        1px solid
+        rgba(199,164,93,.2);
+
+}
+
+.letter::before{
+
+    content:"♡";
+
+    position:absolute;
+
+    top:20px;
+
+    right:30px;
+
+    font-size:45px;
+
+    color:#e8c5c6;
+
+}
+
+.letter-top{
+
+    text-align:center;
+
+    margin-bottom:40px;
+
+}
+
+.letter-top small{
+
+    font-size:9px;
+
+    letter-spacing:.3em;
+
+    color:#b39367;
+
+    text-transform:uppercase;
+
+}
+
+.letter h2{
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size:
+        clamp(38px,6vw,65px);
+
+    font-weight:400;
+
+    color:#654a4c;
+
+    margin-top:10px;
+
+}
+
+.letter-body{
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size:
+        clamp(20px,3vw,27px);
+
+    line-height:1.7;
+
+    color:#796c69;
+
+    text-align:center;
+
+}
+
+.letter-body span{
+
+    color:#c9828a;
+
+}
+
+.signature{
+
+    text-align:right;
+
+    margin-top:45px;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-style:italic;
+
+    font-size:27px;
+
+    color:#bd777d;
+
+}
+
+
+/* =========================================================
+   SURPRISE
+========================================================= */
+
+.surprise{
+
+    min-height:
+        75vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+}
+
+.surprise-title{
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size:
+        clamp(55px,10vw,120px);
+
+    font-weight:400;
+
+    line-height:.9;
+
+    color:#594344;
+
+}
+
+.surprise-title span{
+
+    color:#c9828a;
+
+    font-style:italic;
+
+}
+
+.surprise-button{
+
+    margin-top:45px;
+
+    width:90px;
+
+    height:90px;
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        #c7a45d;
+
+    background:white;
+
+    color:#c9828a;
+
+    font-size:32px;
+
+    transition:.4s;
+
+    box-shadow:
+        0 12px 35px
+        rgba(110,70,65,.12);
+
+}
+
+.surprise-button:hover{
+
+    transform:
+        scale(1.12)
+        rotate(-5deg);
+
+    background:#c9828a;
+
+    color:white;
+
+}
+
+.surprise-message{
+
+    max-width:600px;
+
+    margin-top:35px;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size:25px;
+
+    line-height:1.6;
+
+    color:#756764;
+
+    opacity:0;
+
+    transform:translateY(20px);
+
+    transition:.8s;
+
+}
+
+.surprise-message.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer{
+
+    text-align:center;
+
+    padding:40px 20px;
+
+    color:#a69a95;
+
+    font-size:10px;
+
+    letter-spacing:.15em;
+
+}
+
+.footer span{
+
+    color:#c9828a;
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:800px){
+
+    .navbar{
+
+        top:10px;
+
+        width:94%;
+
+    }
+
+    .nav-links{
+
+        display:none;
+
+    }
+
+    .menu{
+
+        display:block;
+
+    }
+
+    .page{
+
+        padding:
+            105px 6vw 60px;
+
+    }
+
+    .home{
+
+        padding:
+            0 20px;
+
+    }
+
+    .home-title{
+
+        font-size:
+            24vw;
+
+    }
+
+    .home-subtitle{
+
+        font-size:21px;
+
+        line-height:1.5;
+
+    }
+
+    .buttons{
+
+        margin-top:30px;
+
+    }
+
+    .btn{
+
+        width:
+            min(250px,100%);
+
+    }
+
+    .about-grid{
+
+        grid-template-columns:1fr;
+
+        gap:45px;
+
+    }
+
+    .main-photo{
+
+        max-width:500px;
+
+        margin:auto;
+
+    }
+
+    .gallery{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .gallery-card:first-child{
+
+        grid-row:auto;
+
+    }
+
+    .gallery-card img{
+
+        min-height:
+            420px;
+
+    }
+
+    .section-header{
+
+        margin-bottom:45px;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+.mobile-menu{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+        rgba(250,247,243,.98);
+
+    z-index:90;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.4s;
+
+}
+
+.mobile-menu.open{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+.mobile-links{
+
+    display:flex;
+
+    flex-direction:column;
+
+    text-align:center;
+
+    gap:25px;
+
+}
+
+.mobile-links a{
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size:42px;
+
+    color:#654a4c;
+
+}
+
+
+/* =========================================================
+   EXTRA SMALL
+========================================================= */
+
+@media(max-width:430px){
+
+    .home-title{
+
+        font-size:25vw;
+
+    }
+
+    .section-title{
+
+        font-size:52px;
+
+    }
+
+    .letter{
+
+        padding:35px 22px;
+
+    }
+
+    .letter-body{
+
+        font-size:21px;
+
+    }
+
+    .gallery-card img{
+
+        min-height:360px;
+
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ======================================================
+     FLOATING HEARTS
+====================================================== -->
+
+<div id="hearts"></div>
+
+
+<!-- ======================================================
+     NAVIGATION
+====================================================== -->
+
+<nav class="navbar">
+
+    <a href="#home"
+       class="logo page-link">
+
+        S<span>♡</span>NEHA
+
+    </a>
+
+
+    <div class="nav-links">
+
+        <a href="#home"
+           class="page-link">
+            Home
+        </a>
+
+        <a href="#about"
+           class="page-link">
+            Her
+        </a>
+
+        <a href="#gallery"
+           class="page-link">
+            Gallery
+        </a>
+
+        <a href="#letter"
+           class="page-link">
+            Letter
+        </a>
+
+        <a href="#surprise"
+           class="page-link">
+            Surprise
+        </a>
+
+    </div>
+
+
+    <button
+        class="menu"
+        id="menuButton">
+
+        ☰
+
+    </button>
+
+</nav>
+
+
+<!-- ======================================================
+     MOBILE MENU
+====================================================== -->
+
+<div
+    class="mobile-menu"
+    id="mobileMenu">
+
+    <div class="mobile-links">
+
+        <a href="#home"
+           class="page-link">
+            Home
+        </a>
+
+        <a href="#about"
+           class="page-link">
+            Her
+        </a>
+
+        <a href="#gallery"
+           class="page-link">
+            Gallery
+        </a>
+
+        <a href="#letter"
+           class="page-link">
+            Letter
+        </a>
+
+        <a href="#surprise"
+           class="page-link">
+            Surprise
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- ======================================================
+     HOME PAGE
+====================================================== -->
+
+<section
+    class="page active"
+    id="home">
+
+    <div class="home">
+
+        <div class="home-content">
+
+            <div class="small-title">
+
+                A little website made with love
+
+            </div>
+
+
+            <h1 class="home-title">
+
+                SNEHA
+
+                <span>
+                    My Baby
+                </span>
+
+            </h1>
+
+
+            <p class="home-subtitle">
+
+                For the girl who makes
+                <strong>my world</strong>
+                a little more beautiful.
+
+            </p>
+
+
+            <div class="buttons">
+
+                <a
+                    href="#about"
+                    class="btn btn-primary page-link">
+
+                    Meet Her ♡
+
+                </a>
+
+
+                <a
+                    href="#letter"
+                    class="btn btn-secondary page-link">
+
+                    A Letter For You
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="scroll-text">
+
+            SCROLL TO EXPLORE
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     ABOUT PAGE
+====================================================== -->
+
+<section
+    class="page"
+    id="about">
+
+
+    <div class="section-header">
+
+        <div class="section-label">
+            01 — ABOUT HER
+        </div>
+
+        <h2 class="section-title">
+
+            There is only
+            <em>one Sneha.</em>
+
+        </h2>
+
+    </div>
+
+
+    <div class="about-grid">
+
+
+        <!-- PHOTO 1 -->
+
+        <div class="main-photo">
+
+            <img
+                src="./assets/sneha1.JPG"
+                alt="Sneha">
+
+            <div
+                class="photo-decoration">
+            </div>
+
+        </div>
+
+
+        <!-- TEXT -->
+
+        <div class="about-text">
+
+            <div class="quote">
+
+                "Some people are
+                beautiful...
+
+                <br>
+
+                <span>
+                    and some people
+                    make life beautiful."
+                </span>
+
+            </div>
+
+
+            <div class="gold-line"></div>
+
+
+            <p>
+
+                And then there is Sneha.
+
+                <br><br>
+
+                She has that rare kind of
+                presence that makes even
+                ordinary moments feel special.
+
+                <br><br>
+
+                Her smile.
+
+                Her little expressions.
+
+                The way she makes
+                everything around her
+                feel a little warmer.
+
+                <br><br>
+
+                To everyone else,
+                she is <strong>Sneha</strong>.
+
+                <br>
+
+                But to me...
+
+                <br>
+
+                she will always be
+
+                <strong style="color:#c9828a;">
+                    My Baby.
+                </strong>
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     GALLERY PAGE
+====================================================== -->
+
+<section
+    class="page"
+    id="gallery">
+
+
+    <div class="section-header">
+
+        <div class="section-label">
+            02 — HER GALLERY
+        </div>
+
+        <h2 class="section-title">
+
+            Three photos.
+
+            <br>
+
+            <em>One beautiful girl.</em>
+
+        </h2>
+
+    </div>
+
+
+    <div class="gallery">
+
+
+        <!-- PHOTO 1 -->
+
+        <div
+            class="gallery-card"
+            data-img="sneha1.jpg">
+
+            <img
+                src="./assets/snehaG1.JPG"
+                alt="Sneha">
+
+            <div class="gallery-overlay">
+
+                <div class="gallery-caption">
+
+                    Beautiful.
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PHOTO 2 -->
+
+        <div
+            class="gallery-card"
+            data-img="sneha2.jpg">
+
+            <img
+                src="./assets/snehaG2.JPG"
+                alt="Sneha">
+
+            <div class="gallery-overlay">
+
+                <div class="gallery-caption">
+
+                    My favourite smile.
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PHOTO 3 -->
+
+        <div
+            class="gallery-card"
+            data-img="sneha3.jpg">
+
+            <img
+                src="./assets/snehaG3.JPG"
+                alt="Sneha">
+
+            <div class="gallery-overlay">
+
+                <div class="gallery-caption">
+
+                    Always you.
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     LETTER PAGE
+====================================================== -->
+
+<section
+    class="page"
+    id="letter">
+
+
+    <div class="section-header">
+
+        <div class="section-label">
+            03 — FROM MY HEART
+        </div>
+
+        <h2 class="section-title">
+
+            A letter
+            <em>for you.</em>
+
+        </h2>
+
+    </div>
+
+
+    <div class="letter-container">
+
+        <div class="letter">
+
+
+            <div class="letter-top">
+
+                <small>
+                    For My Baby
+                </small>
+
+                <h2>
+                    Dear Sneha,
+                </h2>
+
+            </div>
+
+
+            <div class="letter-body">
+
+                I don't know if words can ever
+                completely explain what you
+                mean to me.
+
+                <br><br>
+
+                But if I had to try...
+
+                <br><br>
+
+                I'd say that you are one of those
+                rare people who make life feel
+                <span>
+                    softer, warmer and happier.
+                </span>
+
+                <br><br>
+
+                You make ordinary moments
+                feel worth remembering.
+
+                <br><br>
+
+                And if someone asked me what
+                my favourite thing in this world is...
+
+                <br><br>
+
+                I think I'd simply say
+
+                <br>
+
+                <span>
+                    "Her."
+                </span>
+
+                <br><br>
+
+                Because among all the beautiful
+                things in this world,
+
+                <br>
+
+                <span>
+                    I would still choose you.
+                </span>
+
+                <br><br>
+
+                Every time.
+
+            </div>
+
+
+            <div class="signature">
+
+                Yours,
+                <br>
+                always ♡
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     SURPRISE PAGE
+====================================================== -->
+
+<section
+    class="page"
+    id="surprise">
+
+
+    <div class="surprise">
+
+
+        <div class="section-label">
+
+            04 — ONE LAST THING
+
+        </div>
+
+
+        <h1 class="surprise-title">
+
+            Hey,
+
+            <br>
+
+            <span>
+                My Baby.
+            </span>
+
+        </h1>
+
+
+        <button
+            class="surprise-button"
+            id="surpriseButton">
+
+            ♡
+
+        </button>
+
+
+        <div
+            class="surprise-message"
+            id="surpriseMessage">
+
+            If I could give you one gift,
+            I would give you the ability to
+            see yourself through my eyes.
+
+            <br><br>
+
+            Because then you would finally
+            understand how incredibly
+            <strong style="color:#c9828a;">
+                special you are to me.
+            </strong>
+
+            <br><br>
+
+            You are not just someone
+            I love.
+
+            <br>
+
+            You are someone
+            I am grateful to have.
+
+            <br><br>
+
+            <strong style="color:#c9828a;">
+                Stay my beautiful
+                My Baby. ♡
+            </strong>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     LIGHTBOX
+====================================================== -->
+
+<div
+    class="lightbox"
+    id="lightbox">
+
+    <button
+        class="close"
+        id="closeLightbox">
+
+        ×
+
+    </button>
+
+    <img
+        id="lightboxImage"
+        src=""
+        alt="Sneha">
+
+</div>
+
+
+<!-- ======================================================
+     FOOTER
+====================================================== -->
+
+<footer class="footer">
+
+    Made especially for
+
+    <span>
+        SNEHA ♡
+    </span>
+
+    — My Baby
+
+</footer>
+
+
+<script>
+
+/* =========================================================
+   CREATE FLOATING HEARTS
+========================================================= */
+
+const heartContainer =
+    document.getElementById("hearts");
+
+for(let i = 0; i < 25; i++){
+
+    const heart =
+        document.createElement("div");
+
+    heart.className = "heart";
+
+    heart.innerHTML =
+        Math.random() > .5
+        ? "♡"
+        : "♥";
+
+    heart.style.left =
+        Math.random() * 100 + "%";
+
+    heart.style.fontSize =
+        (10 + Math.random() * 18) + "px";
+
+    heart.style.animationDuration =
+        (10 + Math.random() * 15) + "s";
+
+    heart.style.animationDelay =
+        (-Math.random() * 20) + "s";
+
+    heartContainer.appendChild(heart);
+
+}
+
+
+/* =========================================================
+   PAGE NAVIGATION
+========================================================= */
+
+const pages =
+    document.querySelectorAll(".page");
+
+
+function showPage(id){
+
+    pages.forEach(page => {
+
+        page.classList.remove("active");
+
+    });
+
+
+    const page =
+        document.getElementById(id);
+
+    if(page){
+
+        page.classList.add("active");
+
+        window.scrollTo({
+            top:0,
+            behavior:"instant"
+        });
+
+    }
+
+}
+
+
+/* =========================================================
+   NAVIGATION BUTTONS
+========================================================= */
+
+document.querySelectorAll(".page-link")
+.forEach(link => {
+
+    link.addEventListener("click", function(e){
+
+        const href =
+            this.getAttribute("href");
+
+        if(!href ||
+           !href.startsWith("#"))
+            return;
+
+        e.preventDefault();
+
+        const id =
+            href.substring(1);
+
+        showPage(id);
+
+        history.pushState(
+            null,
+            "",
+            "#" + id
+        );
+
+
+        document
+            .getElementById("mobileMenu")
+            .classList.remove("open");
+
+    });
+
+});
+
+
+/* =========================================================
+   BROWSER BACK BUTTON
+========================================================= */
+
+window.addEventListener(
+    "popstate",
+    function(){
+
+        const id =
+            location.hash.substring(1)
+            || "home";
+
+        showPage(id);
+
+    }
+);
+
+
+/* =========================================================
+   INITIAL PAGE
+========================================================= */
+
+const firstPage =
+    location.hash.substring(1)
+    || "home";
+
+showPage(firstPage);
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+const menuButton =
+    document.getElementById("menuButton");
+
+const mobileMenu =
+    document.getElementById("mobileMenu");
+
+
+menuButton.addEventListener(
+    "click",
+    function(){
+
+        mobileMenu.classList.toggle("open");
+
+    }
+);
+
+
+/* =========================================================
+   LIGHTBOX
+========================================================= */
+
+const lightbox =
+    document.getElementById("lightbox");
+
+const lightboxImage =
+    document.getElementById("lightboxImage");
+
+const closeLightbox =
+    document.getElementById("closeLightbox");
+
+
+document.querySelectorAll(".gallery-card")
+.forEach(card => {
+
+    card.addEventListener(
+        "click",
+        function(){
+
+            const image =
+                this.getAttribute("data-img");
+
+            lightboxImage.src =
+                image;
+
+            lightbox.classList.add("show");
+
+        }
+    );
+
+});
+
+
+closeLightbox.addEventListener(
+    "click",
+    function(){
+
+        lightbox.classList.remove("show");
+
+    }
+);
+
+
+lightbox.addEventListener(
+    "click",
+    function(e){
+
+        if(e.target === lightbox){
+
+            lightbox.classList.remove("show");
+
+        }
+
+    }
+);
+
+
+document.addEventListener(
+    "keydown",
+    function(e){
+
+        if(e.key === "Escape"){
+
+            lightbox.classList.remove("show");
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   SURPRISE BUTTON
+========================================================= */
+
+const surpriseButton =
+    document.getElementById("surpriseButton");
+
+const surpriseMessage =
+    document.getElementById("surpriseMessage");
+
+
+surpriseButton.addEventListener(
+    "click",
+    function(){
+
+        surpriseMessage.classList.toggle("show");
+
+        if(
+            surpriseMessage.classList.contains("show")
+        ){
+
+            surpriseButton.innerHTML =
+                "♥";
+
+            createHeartExplosion();
+
+        }else{
+
+            surpriseButton.innerHTML =
+                "♡";
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   HEART EXPLOSION
+========================================================= */
+
+function createHeartExplosion(){
+
+    for(let i=0;i<25;i++){
+
+        const heart =
+            document.createElement("div");
+
+        heart.innerHTML =
+            Math.random() > .5
+            ? "♥"
+            : "♡";
+
+        heart.style.position =
+            "fixed";
+
+        heart.style.left =
+            "50%";
+
+        heart.style.top =
+            "50%";
+
+        heart.style.zIndex =
+            "1000";
+
+        heart.style.pointerEvents =
+            "none";
+
+        heart.style.color =
+            "#c9828a";
+
+        heart.style.fontSize =
+            (12 + Math.random()*20)
+            + "px";
+
+
+        const angle =
+            Math.random()
+            * Math.PI
+            * 2;
+
+        const distance =
+            80 +
+            Math.random()*250;
+
+        const x =
+            Math.cos(angle)
+            * distance;
+
+        const y =
+            Math.sin(angle)
+            * distance;
+
+
+        const animation =
+            heart.animate(
+
+                [
+
+                    {
+                        transform:
+                            "translate(-50%,-50%) scale(.3)",
+
+                        opacity:1
+                    },
+
+                    {
+
+                        transform:
+                            `translate(
+                                calc(-50% + ${x}px),
+                                calc(-50% + ${y}px)
+                            )
+                            scale(1)`,
+
+                        opacity:0
+
+                    }
+
+                ],
+
+                {
+
+                    duration:
+                        1000 +
+                        Math.random()*700,
+
+                    easing:
+                        "cubic-bezier(.2,.8,.2,1)"
+
+                }
+
+            );
+
+
+        document.body.appendChild(
+            heart
+        );
+
+
+        animation.onfinish =
+            () => heart.remove();
+
+    }
+
+}
+
+
+/* =========================================================
+   PREVENT BROKEN IMAGE DRAG
+========================================================= */
+
+document.querySelectorAll("img")
+.forEach(img => {
+
+    img.addEventListener(
+        "dragstart",
+        e => e.preventDefault()
+    );
+
+});
+
+</script>
+
+</body>
+</html>
